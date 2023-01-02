@@ -1,74 +1,4 @@
-// var eventHandler = {
-//     events: [], //Array of events the element is subscribed to.
-  
-//     bindEvent: function(event, callback, targetElement) {
-//       //remove any duplicate event 
-//       this.unbindEvent(event, targetElement);
-  
-//       //bind event listener to DOM element
-//       targetElement.addEventListener(event, callback, false);
-  
-//       this.events.push({
-//         type: event,
-//         event: callback,
-//         target: targetElement
-//       }); //push the new event into our events array.
-//     },
-  
-//     findEvent: function(event) {
-//       return this.events.filter(function(evt) {
-//         return (evt.type === event); //if event type is a match return
-//       }, event)[0];
-//     },
-//     unbindEvent: function(event, targetElement) {
-//       //search events
-//       var foundEvent = this.findEvent(event);
-  
-//       //remove event listener if found
-//       if (foundEvent !== undefined) {
-//         targetElement.removeEventListener(event, foundEvent.event, false);
-//       }
-  
-//       //update the events array
-//       this.events = this.events.filter(function(evt) {
-//         return (evt.type !== event);
-//       }, event);
-//     }
-//   };
-  
-//   var testBtn = document.getElementById('test');
-  var log = document.getElementById('eventlog');
-  
-  function logMsg(e) {
-    if (e.type !== undefined) {
-      log.innerHTML = log.innerHTML + '<br> Event triggered: ' + e.type;
-    }
-  }
-  
-//   function addEvent() {
-//     var list = document.getElementById("eventlist");
-//     var selected = list.options[list.selectedIndex].value;
-//     eventHandler.bindEvent(selected, logMsg, document.getElementById('test'));
-//     activeList();
-//   }
-  
-//   function activeList() {
-//     var list = document.getElementById('activeeventlist');
-//     list.innerHTML = '';
-//     eventHandler.events.forEach(function(e) {
-//       var opt = document.createElement('option');
-//       opt.setAttribute('value', e.type);
-//       opt.innerHTML = e.type;
-//       list.appendChild(opt);
-//     });
-//   }
-  
-//   function removeEvent() {
-//     var list = document.getElementById("activeeventlist");
-//     var selected = list.options[list.selectedIndex].value;
-//     eventHandler.unbindEvent(selected, document.getElementById('test'));
-//     activeList();
-//   }
+
     function addClass(){
         var html = "";
         if ( document.getElementById("MyElement").className.match(/(?:^|\s)myClass(?!\S)/) ){
@@ -176,7 +106,7 @@
         document.getElementById("addClass").addEventListener( 'click', addClass);
         document.getElementById("removeClass").addEventListener( 'click', removeClass);
         document.getElementById("getDataSet").addEventListener( 'click', getDataSet);
-        // document.getElementById("getAjax").addEventListener( 'click', makeAjaxRequest('https://jsonplaceholder.typicode.com/todos/1', 'GET'));
+        document.getElementById("getAjax").addEventListener( 'click', makeAjaxRequest('https://jsonplaceholder.typicode.com/todos/1', 'GET'));
         document.getElementById("setData").addEventListener( 'click', getDataAndSet);
         document.getElementById("postAjax").addEventListener( 'click', MakeMultiplePostRequest);
     }
