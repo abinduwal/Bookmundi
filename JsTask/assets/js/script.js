@@ -88,7 +88,7 @@
     function removeClass(){
         var html = "";
         if ( document.getElementById("MyElement").className.match(/(?:^|\s)myClass(?!\S)/) ){
-            document.getElementById("MyElement").className = document.getElementById("MyElement").className.replace( /(?:^|\s)MyClass(?!\S)/g , '' )
+            document.getElementById("MyElement").classList.remove("myClass");
             html += "Class Name Removed"
         } else{
             // document.getElementById("MyElement").className = "myClass";
@@ -158,7 +158,7 @@
           console.log('Response 1:', texts[0]);
           console.log('Response 2:', texts[1]);
           console.log('Response 3:', texts[2]);
-          
+
         })
         .catch(function(error) {
           console.error('Error:', error);
